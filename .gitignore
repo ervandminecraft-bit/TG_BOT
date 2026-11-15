@@ -1,0 +1,17 @@
+# secrets and data — never commit
+.env
+data/*
+!data/.gitkeep
+backups/*
+!backups/.gitkeep
+logs/*
+!logs/.gitkeep
+*.sqlite3
+*.sqlite3-*
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
