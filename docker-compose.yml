@@ -1,0 +1,15 @@
+services:
+  bot:
+    build: .
+    container_name: subscription-bot
+    restart: unless-stopped        # restarts after crashes and after the computer reboots
+    env_file: .env
+    volumes:
+      - ./data:/app/data           # database (keep it!)
+      - ./backups:/app/backups     # daily backups
+      - ./logs:/app/logs           # logs/bot.log
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
